@@ -13,18 +13,17 @@ body {
     font-family: 'Comforter', cursive;
     font-family: 'Open Sans', sans-serif;
 }
-#div1 {
-    margin-right: 1%;
-    width: 50%;
-    float: left;
+
+.logo, .banner,#nav, .content, .footer , .product, #div1, #div2{
+    border: 1px solid;
+    border-color: #5aa85a;
+    border-radius: 5px;
+    margin-top: 5px;
 }
-#div2 {
-    margin-top: 72px;
-    width: 30%;
-    float: left;
+.banner, .logo{
+    height: 200px;
 }
-#div2 {
-    margin-top: 72px;
-    width: 30%;
-    float: left;
+
+.footer {
+    height: 50px;
 }

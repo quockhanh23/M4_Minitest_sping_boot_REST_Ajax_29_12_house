@@ -18,15 +18,34 @@
             })
         }
 
+        function getOne(id) {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/api/houses/find/" + id,
+                success: function (data) {
+                    console.log(data)
+                    findOne(data)
+                }
+            })
+        }
+        function findOne(data) {
+            let res = ""
+            res+= data.name + " " + data.bathroom +" "+ data.category.name
+            document.getElementById("div1").innerHTML = res;
+        }
+
         function displayHouse(data) {
 
             let res = "<h2>List house</h2>" + "<table border='1px' width='100%'><tr>" + "<th>Name</th>" + "<th>bathroom</th>" + "<th>Category</th>"
+                + "<th style=\"color: rebeccapurple\">Detail</th>"
                 + "<th style=\"color: rebeccapurple\">Edit</th>"
                 + "<th style=\"color: rebeccapurple\">Delete</th></tr>"
             for (let i = 0; i < data.length; i++) {
                 res += "<tr><td>" + data[i].name + "</td>" +
                     "<td>" + data[i].bathroom + "</td>" +
                     "<td>" + data[i].category.name + "</td>" +
+
+                    "<td align=\"center\">" + "<button onclick='getOne(" + data[i].id + ")'>Detail</button>" + "</td>" +
                     "<td align=\"center\">" + "<button onclick='showFormEdit(" + data[i].id + ")'>edit</button>" + "</td>" +
                     "<td align=\"center\">" + "<button onclick='deleteById(" + data[i].id + ")'>delete</button>" + "</td></tr>";
             }
@@ -138,7 +157,7 @@
                             res += `<option value="${data[i].id}">${data[i].name}</option>`
 
                         }
-                        res += "</td></tr></select></table>" + '<button onClick="save()">Add</button>'
+                        res += "</td></tr></select></table>" + '<button onclick="save()">Add</button>'
                         document.getElementById('div1').innerHTML = res;
                     }
                 })
@@ -174,14 +193,15 @@
                 }
             })
         }
+
         function orderByName() {
             $.ajax({
                 type: "GET",
                 url: "http://localhost:8080/api/houses/find/",
                 success: function (data) {
                     console.log(data)
-                    let str = "<h2>Order by name</h2>" +"<table border='1px'  width='100%'><tr>" + "<th>Name</th>" + "<th>Bathroom</th>"
-                       + "<th>Category</th></tr>"
+                    let str = "<h2>Order by name</h2>" + "<table border='1px'  width='100%'><tr>" + "<th>Name</th>" + "<th>Bathroom</th>"
+                        + "<th>Category</th></tr>"
                     for (let i = 0; i < data.length; i++) {
                         str += "<tr><td>" + data[i].name + "</td>" +
                             '<td>' + data[i].bathroom + "</td>" +
@@ -195,13 +215,14 @@
                 }
             })
         }
+
         function category1() {
             $.ajax({
                 type: "GET",
                 url: "http://localhost:8080/api/houses/findCategory1",
                 success: function (data) {
                     console.log(data)
-                    let str = "<h2>Order by name</h2>" +"<table border='1px'  width='100%'><tr>" + "<th>Name</th>" + "<th>Bathroom</th>"
+                    let str = "<h2>Order by name</h2>" + "<table border='1px'  width='100%'><tr>" + "<th>Name</th>" + "<th>Bathroom</th>"
                         + "<th>Category</th></tr>"
                     for (let i = 0; i < data.length; i++) {
                         str += "<tr><td>" + data[i].name + "</td>" +
@@ -216,13 +237,14 @@
                 }
             })
         }
+
         function category2() {
             $.ajax({
                 type: "GET",
                 url: "http://localhost:8080/api/houses/findCategory2",
                 success: function (data) {
                     console.log(data)
-                    let str = "<h2>Order by name</h2>" +"<table border='1px'  width='100%'><tr>" + "<th>Name</th>" + "<th>Bathroom</th>"
+                    let str = "<h2>Order by name</h2>" + "<table border='1px'  width='100%'><tr>" + "<th>Name</th>" + "<th>Bathroom</th>"
                         + "<th>Category</th></tr>"
                     for (let i = 0; i < data.length; i++) {
                         str += "<tr><td>" + data[i].name + "</td>" +
@@ -237,13 +259,14 @@
                 }
             })
         }
+
         function findBathroom() {
             $.ajax({
                 type: "GET",
                 url: "http://localhost:8080/api/houses/findBathroom/",
                 success: function (data) {
                     console.log(data)
-                    let str = "<h2>Order by name</h2>" +"<table border='1px'  width='100%'><tr>" + "<th>Name</th>" + "<th>Bathroom</th>"
+                    let str = "<h2>Order by name</h2>" + "<table border='1px'  width='100%'><tr>" + "<th>Name</th>" + "<th>Bathroom</th>"
                         + "<th>Category</th></tr>"
                     for (let i = 0; i < data.length; i++) {
                         str += "<tr><td>" + data[i].name + "</td>" +
