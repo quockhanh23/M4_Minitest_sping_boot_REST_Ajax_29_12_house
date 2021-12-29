@@ -1,0 +1,30 @@
+button {
+    background: #0f3b62;
+    color: whitesmoke;
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-top: 5px;
+    transition: 0.3s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+body {
+    background: lightgray;
+    font-family: 'Comforter', cursive;
+    font-family: 'Open Sans', sans-serif;
+}
+#div1 {
+    margin-right: 1%;
+    width: 50%;
+    float: left;
+}
+#div2 {
+    margin-top: 72px;
+    width: 30%;
+    float: left;
+}
+#div2 {
+    margin-top: 72px;
+    width: 30%;
+    float: left;
+}
