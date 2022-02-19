@@ -47,7 +47,7 @@ public class HouseRestController {
         return new ResponseEntity<>(house.get(), HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping("")
     public ResponseEntity<House> saveHouse(@RequestBody House house) {
         houseService.save(house);
         return new ResponseEntity<>(house, HttpStatus.OK);

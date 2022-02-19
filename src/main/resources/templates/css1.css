@@ -14,16 +14,3 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-.logo, .banner,#nav, .content, .footer , .product, #div1, #div2{
-    border: 1px solid;
-    border-color: #5aa85a;
-    border-radius: 5px;
-    margin-top: 5px;
-}
-.banner, .logo{
-    height: 200px;
-}
-
-.footer {
-    height: 50px;
-}
